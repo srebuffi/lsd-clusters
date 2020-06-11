@@ -16,7 +16,7 @@ conda activate lsd_c
 
 ## Downloading the pretrained RotNet on CIFAR 10
 
-The pretrained network can be downloaded with the following link:
+The pretrained initialization network can be downloaded with the following link:
 
 https://www.dropbox.com/s/4c6jw6caz3tsoe0/RotNet_cifar10.pt?dl=0
 

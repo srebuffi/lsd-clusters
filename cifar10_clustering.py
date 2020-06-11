@@ -7,6 +7,7 @@ from utils_misc import seed_torch, prepare_save_dir, create_logger, save_logger,
 from utils_algo import PairEnum, BCE_softlabels, sigmoid_rampup, cluster_acc
 import utils_net
 import numpy as np
+import os
 
 
 def train(args, model, device, train_loader, optimizer, epoch):
@@ -151,16 +152,16 @@ def main():
     save_logger(args)
 
     # Initialize the splits
-    trainset = datasets.CIFAR10_ALL(root='/scratch/local/ramdisk/srebuffi/data', train=True, download=True, transform=datasets.TransformThrice(datasets.dict_transform['cifar_train']))
+    trainset = datasets.CIFAR10_ALL(root=os.getcwd(), train=True, download=True, transform=datasets.TransformThrice(datasets.dict_transform['cifar_train']))
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=256, shuffle=True, num_workers=2, drop_last=True)
 
-    testset = datasets.CIFAR10_ALL(root='/scratch/local/ramdisk/srebuffi/data', train=True, download=True, transform=datasets.dict_transform['cifar_test'])
+    testset = datasets.CIFAR10_ALL(root=os.getcwd(), train=True, download=True, transform=datasets.dict_transform['cifar_test'])
     testloader = torch.utils.data.DataLoader(testset, batch_size=1000, shuffle=False, num_workers=1)
 
     # First network intialization: pretrain the RotNet network
     model = utils_net.ResNet(utils_net.BasicBlock, [2, 2, 2, 2], 10)
     model = model.to(device)
-    state_dict_rotnet = torch.load('/scratch/shared/nfs1/srebuffi/exp/rotNEt/rotNet_best.pth')
+    state_dict_rotnet = torch.load('RotNet_cifar10.pt')
     del state_dict_rotnet['linear.weight']
     del state_dict_rotnet['linear.bias']
     model.load_state_dict(state_dict_rotnet, strict=False)

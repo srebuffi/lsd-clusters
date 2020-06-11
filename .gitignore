@@ -1,0 +1,13 @@
+__pycache__
+datasets
+experiments
+data
+
+*.pyc
+*.txt
+*.pth
+*.mat
+*.out
+*.rar
+*.tar
+.DS_Store

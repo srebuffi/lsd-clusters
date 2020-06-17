@@ -37,3 +37,17 @@ For the SNE labeling method, please run:
 ```shell
 python cifar10_clustering.py --similarity_type SNE --hyperparam 0.01
 ```
+
+## Citation
+If this work is helpful for your research, please cite our paper.
+```
+@article{rebuffi2020lsdc,
+author    = {Sylvestre-Alvise Rebuffi and Sebastien Ehrhardt and Kai Han and Andrea Vedaldi and Andrew Zisserman},
+title     = {LSD-C: Linearly Separable Deep Clusters},
+journal = {arXiv},
+year      = {2020}
+}
+```
+
+## Acknowledgments
+This work is supported by the [EPSRC Programme Grant Seebibyte EP/M013774/1](http://seebibyte.org/), [Mathworks/DTA DFR02620](), and [ERC IDIU-638009](https://cordis.europa.eu/project/rcn/196773/factsheet/en).

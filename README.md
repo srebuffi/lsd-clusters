@@ -1,4 +1,7 @@
-# Code for "LSD-C: Linearly Separable Deep Clusters"
+# Code for [LSD-C: Linearly Separable Deep Clusters](https://arxiv.org/abs/2006.10039)
+
+by [Sylvestre-Alvise Rebuffi*](http://www.robots.ox.ac.uk/~srebuffi/), [Sebastien Ehrhardt*](), [Kai Han*](http://www.hankai.org), [Andrea Vedaldi](http://www.robots.ox.ac.uk/~vedaldi/), [Andrew Zisserman](http://www.robots.ox.ac.uk/~az/)
+
 
 ## Dependencies
 
